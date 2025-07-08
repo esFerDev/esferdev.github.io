@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>esFerDev</title>
+  <style>
+    /* Fondo interactivo animado tipo grid */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #ddd;
+      background-color: #0d0d0d;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-image: radial-gradient(#1a1a1a 1px, transparent 1px);
+      background-size: 40px 40px;
+      animation: scrollGrid 60s linear infinite;
+      opacity: 0.2;
+      z-index: 0;
+    }
+
+    @keyframes scrollGrid {
+      from { background-position: 0 0; }
+      to { background-position: 1000px 1000px; }
+    }
+
+    main {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    .banner {
+      width: 90%;
+      max-width: 720px;
+      margin-bottom: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 12px #39FF14;
+    }
+
+    h1 {
+      color: #39FF14;
+      font-size: 2.5rem;
+      margin-bottom: 25px;
+      text-shadow: 0 0 6px #39FF14;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .main-button {
+      padding: 18px 44px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border: 2px solid #39FF14;
+      border-radius: 10px;
+      background-color: rgba(13,13,13,0.3);
+      color: #39FF14;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 14px #39FF14 inset, 0 0 8px #39FF14;
+    }
+
+    .main-button:hover {
+      transform: scale(1.08);
+      background-color: rgba(13,13,13,0.6);
+      border-color: #2ecc71;
+      color: #2ecc71;
+      box-shadow: 0 0 18px #2ecc71 inset, 0 0 10px #2ecc71;
+    }
+
+    footer {
+      font-size: 0.85rem;
+      color: #666;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <img src="banner.png" alt="Banner esFerDev" class="banner" />
+    <h1>Welcome to esFerDev's Shop</h1>
+    <div class="button-container">
+      <button class="main-button" onclick="location.href='https://esferdev.tebex.io'">Visit the Store</button>
+      <button class="main-button" onclick="location.href='https://esferdev.github.io/shop/'">Documentation</button>
+    </div>
+    <footer>© 2025 esFerDev — All rights reserved.</footer>
+  </main>
+</body>
+</html>
